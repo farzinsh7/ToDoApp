@@ -44,6 +44,7 @@ INSTALLED_APPS = [
 
     # Custom Apps
     'accounts',
+    'todo',
 ]
 
 MIDDLEWARE = [
