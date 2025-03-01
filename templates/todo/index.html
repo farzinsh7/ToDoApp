@@ -1,15 +1,16 @@
 {% extends "base/base.html" %} 
 {% load static %}
 {% block content %}
+{% include "base/shared/navbar.html" %}
 <div class="content-wrapper">
     <!-- Content -->
     <div class="container-xxl flex-grow-1 container-p-y">
         <div class="row justify-content-center">
-            <div class="col-6">
+            <div class="col-md-6">
               <div class="card mb-4">
                 <h5 class="card-header">To Do List</h5>
                 <div class="card-body demo-vertical-spacing demo-only-element">
-                    <form action="." method="post">
+                    <form action="." method="POST">
                         <div class="input-group">
                             <input type="text" class="form-control" placeholder="Add New Task" aria-label="Add New Task" aria-describedby="button-addon2">
                             <button class="btn btn-outline-primary" type="button" id="button-addon2">Add</button>
