@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django.conf import settings
 
 
 class StatusType(models.IntegerChoices):
@@ -14,7 +15,7 @@ class PriorityType(models.IntegerChoices):
 
 
 class ToDo(models.Model):
-    author = models.ForeignKey('accounts.user', on_delete=models.CASCADE, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     status = models.IntegerField(choices=StatusType.choices, default=StatusType.todo.value)

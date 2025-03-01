@@ -2,7 +2,6 @@ from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from .managers import UserManager
-from .validators import iranian_phone_number_validator
 
 
 # Create your models here.
@@ -33,8 +32,6 @@ class Profile(models.Model):
         'User', on_delete=models.CASCADE, related_name="user_profile")
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
-    phone_number = models.CharField(max_length=15, validators=[
-                                    iranian_phone_number_validator])
     avatar = models.ImageField(
         upload_to="accounts/profile/", default="profile/default.jpg")
 
@@ -48,4 +45,4 @@ class Profile(models.Model):
         if self.first_name or self.last_name:
             return f"{self.first_name} {self.last_name}"
         else:
-            return "پروفایل خود را تکمیل کنید"
+            return "Complete your Profile"
