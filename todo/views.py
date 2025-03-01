@@ -28,7 +28,7 @@ class ToDoView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
 class ToDoDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
     queryset = ToDo.objects.all()
     http_method_names = ["post"]
-    success_message = "The skill was Deleted successfully."
+    success_message = "The Task was Deleted successfully."
     success_url = reverse_lazy("todo:index")
 
 
