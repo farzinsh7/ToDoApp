@@ -10,5 +10,10 @@ from .forms import ToDoFormClass
 class ToDoView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     template_name = "todo/index.html"
     form_class = ToDoFormClass
-    success_url = reverse_lazy("website:contact")
+    success_url = reverse_lazy("todo:index")
     success_message = "Your Task has been add."
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tasks'] = ToDo.objects.all()
+        return context
