@@ -1,0 +1,56 @@
+{% extends "base/base.html" %}
+{% load static %}
+{% block content %}
+<!-- Content -->
+<div class="container-xxl">
+    <div class="row justify-content-center">
+        <div class="authentication-inner col-md-4">
+            <!-- Register Card -->
+            <div class="card">
+              <div class="card-body">
+                <!-- Logo -->
+                <div class="app-brand  justify-content-center">
+                  <a href="index.html" class="app-brand-link gap-2">
+                    <span class="app-brand-logo demo">
+                    </span>
+                    <span class="app-brand-text demo text-body fw-bolder">To Do App</span>
+                  </a>
+                </div>
+                <!-- /Logo -->
+                <h4 class="mb-2">Sign Up Form</h4>  
+                <form class="mb-3" action="." method="POST">
+                    {% csrf_token %}
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" class="form-control" id="email" name="email" placeholder="Enter your Email" autofocus="">
+                  </div>
+                  <div class="mb-3 form-password-toggle">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-group input-group-merge">
+                      <input type="password" id="password" class="form-control" name="password1" placeholder="············" aria-describedby="password">
+                      <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    </div>
+                  </div>
+                  <div class="mb-3 form-password-toggle">
+                    <label class="form-label" for="password">Password</label>
+                    <div class="input-group input-group-merge">
+                      <input type="password" id="password" class="form-control" name="password2" placeholder="············" aria-describedby="password">
+                      <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary d-grid w-100">Sign up</button>
+                </form>
+                <p class="text-center">
+                  <span>Already have an account?</span>
+                  <a href="{% url "accounts:login" %}">
+                    <span>Sign in instead</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+            <!-- Register Card -->
+        </div>
+    </div>
+</div>
+<!-- / Content -->
+{% endblock content %}

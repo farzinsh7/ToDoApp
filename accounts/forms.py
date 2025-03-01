@@ -5,7 +5,7 @@ from .models import User
 
 class UserCreationForm(UserCreationForm):
     """
-    If you want to add something in future
+    For Creating New User
     """
     class Meta:
         model = User
