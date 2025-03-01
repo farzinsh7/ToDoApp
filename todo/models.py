@@ -14,6 +14,7 @@ class PriorityType(models.IntegerChoices):
 
 
 class ToDo(models.Model):
+    author = models.ForeignKey('accounts.user', on_delete=models.CASCADE, null=True)
     title = models.CharField(max_length=255)
     description = models.TextField(null=True, blank=True)
     status = models.IntegerField(choices=StatusType.choices, default=StatusType.todo.value)
