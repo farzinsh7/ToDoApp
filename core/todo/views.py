@@ -8,6 +8,7 @@ from .forms import ToDoFormClass
 
 # Create your views here.
 class ToDoView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
+    """ For Creating API """
     template_name = "todo/index.html"
     form_class = ToDoFormClass
     success_url = reverse_lazy("todo:index")
@@ -26,6 +27,7 @@ class ToDoView(LoginRequiredMixin, SuccessMessageMixin, CreateView):
     
 
 class ToDoDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
+    """ For Deleting API """
     queryset = ToDo.objects.all()
     http_method_names = ["post"]
     success_message = "The Task was Deleted successfully."
@@ -34,6 +36,7 @@ class ToDoDeleteView(LoginRequiredMixin, SuccessMessageMixin, DeleteView):
 
 
 class ToDoUpdateview(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
+    """ For Updating API """
     template_name = "todo/todo-update.html"
     queryset = ToDo.objects.all()
     form_class = ToDoFormClass
