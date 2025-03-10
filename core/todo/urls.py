@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 
 
@@ -9,4 +9,5 @@ urlpatterns = [
          views.ToDoUpdateview.as_view(), name="todo-update"),
     path("todo/<int:pk>/delete/",
          views.ToDoDeleteView.as_view(), name="todo-delete"),
+    path('api/v1/', include('todo.api.v1.urls')),
 ]
