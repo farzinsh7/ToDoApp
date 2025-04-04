@@ -6,6 +6,7 @@ app_name = "accounts"
 urlpatterns = [
     # API
     path('api/v1/', include('accounts.api.v1.urls')),
+    
     # Other EndPoints
     path('login/', views.LoginView.as_view(), name='login'),
     path('logout/', views.LogoutView.as_view(), name='logout'),
