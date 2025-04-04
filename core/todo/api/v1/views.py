@@ -11,7 +11,7 @@ class TodoModelViewSet(viewsets.ModelViewSet):
     """ Getting Todo API For each Author by ModelViewSet """
 
     serializer_class = TodoSerializer
-    permission_classes = [IsAuthor]
+    permission_classes = [IsAuthor, permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.SearchFilter, filters.OrderingFilter]
     filterset_fields = ['status', 'priority']
     search_fields = ['title', 'description']
