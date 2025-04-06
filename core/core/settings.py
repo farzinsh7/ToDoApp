@@ -175,7 +175,7 @@ SIMPLE_JWT = {
 
 SPECTACULAR_SETTINGS = {
     'TITLE': 'TODO App API',
-    'DESCRIPTION': 'This is a Simple Todo App You can use for managing you tasks',
+    'DESCRIPTION': 'This is a Simple Todo App You can use for managing your tasks',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
     'SWAGGER_UI_DIST': 'SIDECAR',
