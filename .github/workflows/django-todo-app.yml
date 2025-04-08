@@ -1,0 +1,21 @@
+name: ToDo App Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Build by Docker Compose
+      run: docker compose up -d
+
+    - name: Run Tests
+      run: docker exec backend-blog sh -c "flake8 && pytest ."
