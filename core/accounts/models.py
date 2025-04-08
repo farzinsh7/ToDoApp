@@ -9,6 +9,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     """
     Custom User Model by AbstractBaseUser
     """
+
     email = models.EmailField(_("email address"), unique=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -29,11 +30,13 @@ class User(AbstractBaseUser, PermissionsMixin):
 
 class Profile(models.Model):
     user = models.OneToOneField(
-        'User', on_delete=models.CASCADE, related_name="user_profile")
+        "User", on_delete=models.CASCADE, related_name="user_profile"
+    )
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     avatar = models.ImageField(
-        upload_to="accounts/profile/", default="profile/default.jpg")
+        upload_to="accounts/profile/", default="profile/default.jpg"
+    )
 
     created_date = models.DateTimeField(auto_now_add=True)
     updated_date = models.DateTimeField(auto_now=True)

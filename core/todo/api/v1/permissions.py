@@ -1,5 +1,6 @@
 from rest_framework import permissions
 
+
 class IsAuthor(permissions.BasePermission):
     """
     Custom permission to allow only the author of a ToDo to access or modify it.

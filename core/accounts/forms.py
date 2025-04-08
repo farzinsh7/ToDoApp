@@ -7,6 +7,7 @@ class UserCreationForm(UserCreationForm):
     """
     For Creating New User
     """
+
     class Meta:
         model = User
         fields = ("email",)
@@ -16,10 +17,10 @@ class UserChangeForm(UserChangeForm):
     """
     If you want to add something in future
     """
+
     class Meta:
         model = User
         fields = ("email",)
-
 
 
 class ProfileEditForm(forms.ModelForm):
@@ -33,5 +34,5 @@ class ProfileEditForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['first_name'].widget.attrs['class'] = "form-control"
-        self.fields['last_name'].widget.attrs['class'] = "form-control"
+        self.fields["first_name"].widget.attrs["class"] = "form-control"
+        self.fields["last_name"].widget.attrs["class"] = "form-control"

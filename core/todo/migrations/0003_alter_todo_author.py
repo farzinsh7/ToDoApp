@@ -7,14 +7,18 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts', '0002_remove_profile_phone_number'),
-        ('todo', '0002_todo_author'),
+        ("accounts", "0002_remove_profile_phone_number"),
+        ("todo", "0002_todo_author"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='todo',
-            name='author',
-            field=models.ForeignKey(null=True, on_delete=django.db.models.deletion.CASCADE, to='accounts.profile'),
+            model_name="todo",
+            name="author",
+            field=models.ForeignKey(
+                null=True,
+                on_delete=django.db.models.deletion.CASCADE,
+                to="accounts.profile",
+            ),
         ),
     ]

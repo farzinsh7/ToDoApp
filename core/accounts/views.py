@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.contrib.auth import views as auth_view
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserCreationForm, ProfileEditForm
@@ -26,7 +25,6 @@ class RegisterView(SuccessMessageMixin, CreateView):
 
 class LogoutView(auth_view.LogoutView):
     pass
-
 
 
 class ProfileEditView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
