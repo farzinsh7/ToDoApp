@@ -18,4 +18,4 @@ jobs:
       run: docker compose up -d
 
     - name: Run Tests
-      run: docker exec backend-blog sh -c "flake8 && pytest ."
+      run: docker exec backend-todo sh -c "flake8 && pytest ."
