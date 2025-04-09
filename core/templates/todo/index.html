@@ -73,7 +73,7 @@
                           {% for object in tasks %}
                           {% if object.status == 1 %}
                           <tr>
-                            <td><strong>{{ object.title }}</strong></td>
+                            <td {% if request.user.is_superuser %}data-bs-toggle="tooltip" data-bs-placement="top" title="{{object.author}}"{% endif %}><strong>{{ object.title|truncatewords:2 }}</strong></td>
                             <td><span class="badge {% if object.priority == 1 %}bg-primary{% elif object.priority == 2 %}bg-warning{% else %}bg-danger{% endif %} me-1">{{ object.get_priority_display }}</span></td>
                             <td class='d-flex'>
                                 <a href="{% url "todo:todo-update" pk=object.pk %}"><button class="btn"><i class="bx bx-edit-alt me-1"></i></button></a>
@@ -109,7 +109,7 @@
                           {% for object in tasks %}
                           {% if object.status == 2 %}
                           <tr>
-                            <td><strong>{{ object.title }}</strong></td>
+                            <td {% if request.user.is_superuser %}data-bs-toggle="tooltip" data-bs-placement="top" title="{{object.author}}"{% endif %}><strong>{{ object.title|truncatewords:2 }}</strong></td>
                             <td><span class="badge {% if object.priority == 1 %}bg-primary{% elif object.priority == 2 %}bg-warning{% else %}bg-danger{% endif %} me-1">{{ object.get_priority_display }}</span></td>
                             <td class='d-flex'>
                               <a href="{% url "todo:todo-update" pk=object.pk %}"><button class="btn"><i class="bx bx-edit-alt me-1"></i></button></a>
@@ -145,7 +145,7 @@
                           {% for object in tasks %}
                           {% if object.status == 3 %}
                           <tr>
-                            <td><strong>{{ object.title }}</strong></td>
+                            <td {% if request.user.is_superuser %}data-bs-toggle="tooltip" data-bs-placement="top" title="{{object.author}}"{% endif %}><strong>{{ object.title|truncatewords:2 }}</strong></td>
                             <td><span class="badge {% if object.priority == 1 %}bg-primary{% elif object.priority == 2 %}bg-warning{% else %}bg-danger{% endif %} me-1">{{ object.get_priority_display }}</span></td>
                             <td class='d-flex'>
                               <a href="{% url "todo:todo-update" pk=object.pk %}"><button class="btn"><i class="bx bx-edit-alt me-1"></i></button></a>
