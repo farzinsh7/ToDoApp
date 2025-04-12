@@ -180,3 +180,8 @@ SPECTACULAR_SETTINGS = {
     "REDOC_DIST": "SIDECAR",
     # OTHER SETTINGS
 }
+
+
+
+# Celery Configurations
+CELERY_BROKER_URL = 'redis://redis-todo:6379/1'
